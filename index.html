@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- google font links -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mansalva&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/responsive.css">
+    
+  <link rel="icon" type="image/x-icon" href="./img/favicon-fl.png">
+  <!-- swiper js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    
+
+</head>
+
+<body>
+
+  <style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+
+}
+
+/* cookies data */
+
+/*  */
+/* popup */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999;
+    padding-top: 15rem; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+     max-width: 500px;
+     margin: 0 auto;
+     padding: 20px;
+     z-index: 999;
+   
+  
+   
+  }
+  .detales button{
+    width: 100%;
+    height: 40px;
+    background-color: #e380ae;
+    border: none;
+    outline: 0;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+
+  }
+  .modal-content input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+        outline: 0;
+        padding: 10px 10px;
+        margin: 10px 0px;
+
+
+  }
+  .modal-content h2{
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .modal-content textarea{
+    width: 100%;
+ 
+    border: 1px solid #ccc;
+        outline: 0;
+        padding: 10px 10px;
+        margin: 10px 0px;
+        resize: none;
+
+  }
+
+  
+  /* The Close Button */
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 48px;
+    font-weight: 500;
+    position: fixed;
+    right: 50px;
+    top: 13%;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  .close img{
+    width: 30px;
+    filter: invert();
+  }
+  
+
+/* popup end */
+
+/* sidenav */
+.menu-bar{
+    display: none;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 80px;
+    transition: 0.5s;
+  
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+  }
+/* sidenav end */
+.wrapper{
+    max-width: 95%;
+    margin: 0 auto;
+}
+ .navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px 0px;
+
+    padding-bottom: 0;
+  
+
+}
+.navbar.active{
+    position: fixed !important;
+    width: 100%;
+    z-index: 9999;
+    border-bottom: 1px solid #ccc;
+    left: 0;
+    transition: 0.6s;
+    padding: 24px 77px;
+    padding-bottom: 0 !important;
+    
+
+}
+.logo img{
+    width: 90px;
+    object-fit: cover;
+    position: relative;
+    bottom: 10px;
+    
+}
+.navbar .list{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar li{
+    list-style: none;
+    margin-top: auto;
+
+}
+.navbar .list li a{
+    text-decoration: none;
+    color: #1A1A1A;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 19px;
+    position: relative;
+}
+.navbar .list li a::after{
+    content: "";
+    height: 2px;
+    width: 0px;
+    display: block;
+    background-color: #e380ae;
+    transition: 0.3s;
+    margin: 0 auto;
+  
+}
+.navbar .list li a:hover::after{
+    width: 100%;
+}
+.btn-lg button{
+    border: none;
+    border-radius: 80px;
+    background-color: #e380ae;
+    color: #fff;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    line-height: 1.2em;
+    outline: 0;
+    padding: 12px 24px;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600    ;
+}
+.btn-lg button:hover{
+    background-color:#a80b549d ;
+}
+/* home section */
+
+.home-section{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/pexels-rui-dias-469842-1472887.jpg);
+    width: 100%;
+   padding: 3rem 0rem;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    color: #fff;
+}
+.content h1{
+    font-size: 6rem;
+    font-weight: 500;
+    letter-spacing: 0px;
+}
+.content p{
+    font-size: 20px;
+
+}
+.content button{
+    border: none;
+    border-radius: 80px;
+    background-color: #e380ae;
+    color: #fff;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    line-height: 1.2em;
+    outline: 0;
+    padding: 15px 24px;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500    ;
+    margin: 20px 0px;
+}
+.content button:hover{
+    background-color:#e380aeab ;
+}
+.wrap-text{
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    background-color: #fff;
+    padding: 15px 20px;
+  
+    top: -50px;
+    position: relative;
+  
+ 
+    
+}
+.row .col-6{
+    position: relative;
+}
+
+.row .col-6 img{
+    width: 100%;
+    padding: 10px ;
+    aspect-ratio: 3/2;
+
+    cursor: pointer;
+    transition: 0.6s;
+    overflow: hidden;
+    
+
+}
+.row .col-6 img:hover{
+    transform: scale(0.95);
+}
+.content-flow{
+    padding: 5px 0px;
+}
+.ancor-text{
+    padding: 7px 0px;
+}
+.content-flow a{
+    color: #00A0DD;
+}
+.overlay-content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.text-center-div{
+    position: relative;
+}
+.overlay{
+
+    padding: 10px 10px;
+    bottom: 25px;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0%;
+    right: 0;
+    color: #fff;
+  
+   
+}
+.ancor-text a{
+    color: #ffff;
+}
+
+.iver{
+    position: relative;
+}
+.img-target_view{
+    position: relative;
+}
+.pare-text p {
+    font-size: 18px;
+}
+
+
+/* stellen */
+.cover-img-bg{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/GA-Bild-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: #fff;
+    
+
+
+}
+.sm-data-con-fl{
+   padding: 13rem 0rem;
+   padding-bottom: 3rem;
+
+}
+.sm-data-con-fl h3{
+    font-size: 4rem;
+    font-weight: 500;
+}
+.sm-span span a{
+    color: #fff;
+}
+
+.sm-span{
+    background-color: #e380ae;
+    padding: 14px 35px;
+    border-radius: 50px;
+    margin: 30px 0px;
+    display: inline-block;
+    font-size: 13px;
+    transition: 0.5s;
+
+}
+.sm-span:hover{
+    background-color: #e380ae8f;
+}
+
+
+/* Dienstleistungen */
+.cards-blog{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding: 16px 0px;
+   
+    
+}
+.tittle-fl{
+ padding: 40px 0px;
+ padding-bottom: 0;
+}
+.cards-blog img{
+    cursor: pointer;
+}
+
+.heading-tittle h2{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.ON-0{
+    color: black !important;
+}
+.au-fl a{
+    color: black !important;
+    font-weight: 500 !important;
+}
+.au-fl a:hover{
+    text-decoration: underline;
+}
+.au-fl{
+    padding: 5px 0px;
+    padding-bottom: 0;
+}
+.fl-loop{
+    gap: 3px !important;
+    display: flex !important;
+}
+.fl-loop i{
+    color: #00A0DD !important;
+}
+.pare-text-flow p{
+    font-size: 15px;
+    width: 95%;
+    padding: 4px 0px;
+}
+.crads{
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 14px 12px;
+}
+
+
+
+/*  */
+
+
+.row-area{
+     display: flex;
+     justify-content: space-between;
+     padding: 4rem 0rem;
+     
+}
+
+.pare{
+    max-width: 92%;
+}
+.pare p{
+    font-size: 17px;
+    line-height: 1.5;
+}
+.tittle h3{
+    font-size: 40px;
+    color: black;
+    font-weight: 500;
+    padding: 20px 0px;
+    position: relative;
+}
+.tittle h3::after{
+    content: "";
+    width: 20%;
+    background-color: #e380ae;
+    height: 3px;
+    display: block;
+}
+.colume-2{
+    flex-basis: 150%;
+}
+
+.ragnge-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    padding: 20px 0px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+}
+.rage-bar{
+    width: 100%;
+    max-width: 80%;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+  
+
+
+}
+.rage-under{
+    background-color: #e380ae;
+    height: 5px;
+    width: 100%;
+    max-width: 85%;
+    border-radius: 5px;
+}
+.rage-under-2{
+    background-color: #e380ae;
+    height: 5px;
+    width: 100%;
+    max-width: 60%;
+    border-radius: 5px;
+}
+.rage-under-3{
+    background-color: #e380ae;
+    height: 5px;
+    width: 75%;
+    max-width: 70%;
+    border-radius: 5px;
+}
+.fl-time{
+    padding: 3px 0px;
+}
+
+/* animation */
+
+.fl-under{
+    animation: ani linear  3s;
+}
+.fl-under-2{
+    animation: lii linear  3s;
+
+}
+.fl-under-3{
+    animation: fll linear 3s;
+
+}
+
+
+
+@keyframes ani {
+    
+0%{
+ width: 0;
+}
+100%{
+    width: 85%;
+}
+} 
+
+@keyframes lii {
+    
+0%{
+ width: 0;
+}
+100%{
+    width: 60%;
+}
+} 
+
+@keyframes  fll {
+    
+0%{
+ width: 0;
+}
+100%{
+    width: 75%;
+}
+} 
+
+
+
+
+/* animation end  */
+/*  */
+
+/* offers */
+.container-fluid-text-center-fl
+{
+    text-align: center;
+   
+}
+.pa-times-fl {
+    max-width: 1072px;
+    margin: 0 auto;
+}
+.tittle-text-heading h3{
+    font-size: 42px;
+    font-weight: 500;
+    padding: 20px 0px;
+    position: relative;
+}
+.tittle-text-heading p{
+    color: #5f5f5f;
+}
+.tittle-text-heading h3::after{
+    content: "";
+    width: 10%;
+    height: 4px;
+    background-color: #e380ae;
+    display: block;
+    max-width: 20%;
+    margin: 0 auto;
+    
+}
+.cards-flow-div-fl-small{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 80px 0px;
+}
+.cards-flex img{
+    background-color: #e380ae;
+    width: 70px;
+    border-radius: 100px;
+    height: 70px;
+    padding: 10px;
+
+}
+.cards-flex{
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 28px ;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cards-flex:hover{
+    background-color: #e380ae;
+    transform: scale(0.95);
+}
+.text-tittle h3{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+
+.pare-text-flow-content p{
+    font-size: 16px;
+    color: #5f5f5f;
+   
+}
+/* offers end  */
+
+/* price table */
+.text-price-fl h3{
+    font-size: 42px;
+    font-weight: 500;
+    padding: 20px 0px;
+    position: relative;
+}
+.text-price-fl h3::after{
+    content: "";
+    width: 10%;
+    height: 4px;
+    background-color: #e380ae;
+    display: block;
+    max-width: 20%;
+    margin: 0 auto;
+}
+.text-pare-flow-fl-loop {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* yogos meet */
+
+.follow-meet-teachers-steps{
+    /* display: flex; */
+    gap: 40px;
+    padding-top: 3.5rem;
+}
+.three-pic{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+.pare-text-follow-meet {
+    max-width: 786px;
+}
+
+.pare-text-follow-meet p  {
+   color: #5f5f5f;
+   padding: 10px 0px;
+   padding-bottom: 0;
+}
+
+
+.follow-steps-tittle h3{
+    font-size: 2.5em;
+    font-weight: 500;
+    
+}
+.follow-steps-tittle h3::after{
+    content: "";
+    display: block;
+    width: 25%;
+    background-color: #e380ae;
+    height: 4px;
+
+}
+
+.three-pic img{
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    background-color: #fff;
+
+}
+
+.meet-cta button{
+    background-color: #e380ae;
+    color: #fff;
+    padding: 14px 15px;
+    outline: 0;
+    border: none;
+    border-radius: 60px; 
+    margin: 20px 0px; 
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.meet-cta button:hover{
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+
+}
+
+
+/* slider */
+.circle-img-data{
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.circle-img-data img{
+    width: 60px !important  ;
+    background-color: #e380ae;
+    padding: 10px 10px;
+    border-radius: 100px;
+    object-fit: cover;
+
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sp-fl{
+    padding: 2rem 0rem !important;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 18px !important;
+    background-color: #e380ae;
+    border-radius: 100px;
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    color: #fff !important;
+    
+  }
+  .target_name-change{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid  #ccc;
+    padding: 20px ;
+    border-radius: 10px;
+    text-align: left;
+
+    
+  }
+  .target_name-change h4{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .pare-target-text {
+    padding: 7px 0px;
+}
+  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    /* left: var(--swiper-navigation-sides-offset, 10px); */
+    right: auto;
+    margin-left: -70px;
+    margin-top: 40px !important;
+
+}
+  .swiper-button-next, .swiper-rtl .swiper-button-next {
+    /* left: var(--swiper-navigation-sides-offset, 10px); */
+    right: auto;
+    margin-right: -70px;
+    margin-top: 40px !important;
+}
+.wrap-tittle-heading{
+    padding: 4rem 0rem;
+    padding-bottom: 0;
+}
+.wrap-tittle-heading h3{
+    font-size: 2.6rem;
+    font-weight: 500;
+    padding-bottom: 0;
+}
+.text-flow-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.aus{
+    color: #e380ae;
+}
+.fl-loop-data-flex img{
+    width: 60px;
+}
+
+.text-price-content-heading{
+    text-align: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 0rem;
+    padding-bottom: 0;
+}
+
+.text-price-content-heading h3{
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding: 20px 0px;
+}
+.text-price-content-heading p{
+    color: #5f5f5f;
+}
+.text-price-content-heading h3::after{
+    content: "";
+    display: block;
+    background-color: #e380ae;
+    height: 4px;
+    width: 30%;
+    margin: 0 auto;
+
+}
+/* slider end  */
+
+
+/* price table */
+.one span{
+    color: black !important;
+}
+.content-fl-loop{
+    max-width: 1090px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3rem 0rem;
+  }
+   .content-fl-loop .card{
+    background: #fff;
+    width: calc(33% - 20px);
+    text-align: center;
+    padding: 15px 30px  30px 30px;
+    padding-bottom: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  .content-fl-loop .card .top{
+     color: #fff;
+     width: 100%;
+     padding: 12px 0px;
+     margin: 20px 0px;
+  }
+  .decimal{
+    font-size: 15px !important;
+  }
+  .price-sec{
+    position: relative;
+  }
+  .price-sec span{
+    font-size: 45px;
+    font-weight: 500;
+    color: #e380ae;
+  }
+  .content-fl-loop .card .top .title{
+   font-size: 23px;
+   font-weight: 600;
+  }
+  .content-fl-loop .card .top .price-sec{
+    /* margin-top: -10px; */
+    font-weight: 500;
+  }
+  .content-fl-loop .card .top .price{
+    font-size: 27px;
+    padding: 10px 0px;
+  }
+  .content-fl-loop .card .info{
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .content-fl-loop .card .details .one{
+    margin-top: 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .content-fl-loop .card .details .one::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    background: #ddd;
+    height: 1px;
+    left: 0;
+    top: -12px;
+    border-radius: 25px;
+  }
+  .content-fl-loop .card .details .one i{
+    color: #2db94d;
+  }
+  .content-fl-loop .card .details i.fa-times{
+    color: #cd3241;
+  }
+  .content-fl-loop .card button{
+    outline: none;
+    border: none;
+     padding: 15px 14px;
+    color: #fff;
+    margin-top: 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    width: 100%;
+    display: block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    
+  }
+  .ribbon{
+    position: absolute;
+    right: -90px;
+    transform: rotate(50deg);
+    background-color: #e380ae;
+    padding: 5px 0px;
+    width: 80%;
+    top: 20px;
+    overflow: hidden;
+    text-align: center;
+    
+  }
+  .ribbon span{
+    font-size: 14px;
+    padding: 2px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: 10px;
+  }
+  .card{
+    position: relative;
+    overflow: hidden;
+  }
+  .sign{
+    background-color: #e380ae !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+  }
+  .content-fl-loop .one .top,
+  .content-fl-loop .one button{
+      background-color: #f9f3ef;
+      color: black;
+
+  }
+  .content-fl-loop .two .top,
+  .content .two button{
+    color: black !important;
+  }
+  .content-fl-loop .three .top,
+  .content-fl-loop .three button{
+    background-color: #f9f3ef;
+    color: black;
+  }
+  .content-fl-loop button:hover {
+    filter: brightness(90%);
+  }
+  .content-fl-loop .one ::selection{
+  background: #8af5b6;
+  }
+  .content-fl-loop .two ::selection{
+  background:  #f2b08c;
+  }
+  .content-fl-loop .three ::selection{
+  background: #d0f9fb;
+  }
+ 
+  @media (max-width:715px) {
+   .content-fl-loop.card{
+      width: 100%;
+  }
+  }
+  
+/* price table end  */
+
+
+/* mat yoga */
+.bg-img-cover-side{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../img/mat\ yoga.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10rem 0rem;
+    color: #fff;
+}
+.heading-bg-cover-mat-yoga h3{
+    font-size: 3rem;
+    font-weight: 500;
+
+}
+.pare-cover-bg-text-flow{
+    max-width: 800px;
+    padding: 20px 0px;
+}
+.pare-cover-bg-text-flow p{
+    color: #fff;
+    line-height: 1.6;
+}
+.btn-cover-bg button{
+    background-color: #e380ae;
+    border-radius: 100px;
+    outline: 0;
+    border: 0;
+    padding: 14px 25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px 0px;
+}
+.btn-cover-bg button:hover{
+    background-color: #e380ae98;
+}
+/* mat yoga end */
+
+
+/* newsletter */
+.newsletter{
+    padding: 3rem 0rem;
+    text-align: center;
+    position: relative;
+
+}
+.form-data-in{
+    position: relative;
+}
+.form-data-in input{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 100px;
+    padding: 15px 15px;
+    position: relative;
+    height: 65px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.form-data-in  button{
+    position: absolute;
+    right: 10px;
+    border: 0;
+    top: 10px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #e87130;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    outline: 0;
+    cursor: pointer;
+    padding: 0 30px;
+    
+
+
+}
+.news-sub h2{
+    font-size: 50px;
+    font-weight: 500;
+}
+.wrap-text-fl{
+    max-width: 700px !important;
+    margin: 30px auto;
+}
+
+/* newsletter end */
+
+/* footer */
+.wrap-footer-content img{
+width: 150px;
+}
+.link-brands{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0px;
+}
+.link-brands i{
+    background-color: #e380ae;
+    padding: 10px 12px;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    flex-wrap: wrap;
+
+}
+.footer-container ul li{
+    list-style: none;
+    padding: 3px 0px;
+}
+.footer-container ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+.footer-container ul li a:hover{
+    color: #e380ae;
+}
+.footer-container  h4{
+ font-size: 25px;
+ font-weight: 500;
+ margin-bottom: 10px;
+}
+.pare-footer{
+    max-width: 344px;
+}
+.bg-color-div{
+    background-color: #F9F3EF;
+}
+.copy-text{
+    padding: 20px 0px;
+    text-align: center;
+}
+
+/* responsive desingn templte */
+@media (max-width: 1300px) {
+    .wrap-text{
+        padding:  0 20px;
+    }
+    .navbar .list{
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: 0;
+        justify-content: center;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next{
+     margin-left: 0 !important;   
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-next{
+        margin-right: 0 !important;  
+    }
+         
+}
+
+@media (max-width: 991px) {
+    .content h1{
+        font-size: 4rem;
+    }
+    .ribbon{
+        
+        position: absolute;
+        right: -90px;
+        transform: rotate(50deg);
+        background-color: #e380ae;
+        padding: 5px 0px;
+        width: 42%;
+        top: 20px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .content-fl-loop .card{
+        background: #fff;
+        
+        margin-bottom: 30px;
+        margin: 25px 20px;
+        width: 100% !important;
+    }
+    .follow-meet-teachers-steps{
+        flex-wrap: wrap;
+    }
+    .navbar .list{
+        display: none;
+    }
+    .row-area{
+        flex-wrap: wrap;
+    }
+    .colume-2 img{
+        padding: 30px 0px;
+        padding-bottom: 0;
+    }
+    .ragnge-div{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .row{
+        grid-template-columns: 1fr;
+    }
+    .cards-flow-div-fl-small{
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .wrap-tittle-heading h3{
+        font-size: 30px;
+    }
+    
+    .wrap-tittle-heading {
+        flex-wrap: wrap;
+    }
+    .three-pic{
+        flex-wrap: wrap;
+    }
+    .sm-data-con-fl h3{
+        font-size: 40px;
+    }
+    .tittle h3{
+        line-height: 1.2;
+    }
+    .sm-data-con-fl {
+        padding: 13rem 2rem;
+        padding-bottom: 3rem;
+    }
+    .content h1{
+        font-size: 3rem;
+    }
+    .content p {
+        font-size: 17px;
+    }
+    .pare-text p{
+        font-size: 13px;
+    }
+    .content-flow a{
+        font-size: 13px;
+    }
+    .content{
+        text-align: center;
+    }
+    .cards-blog{
+        grid-template-columns: 1fr 1fr;
+    }
+    .news-sub h2{
+        padding: 20px 0px;
+        font-size: 35px;
+    }
+}
+
+
+
+@media (max-width: 469px) {
+    .content h1{
+        font-size: 38px;
+    }
+    .ribbon{
+        right: -12% !important;
+    }
+    .tittle-text-heading p {
+        color: #5f5f5f;
+        padding: 0 11px;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        /* left: var(--swiper-navigation-sides-offset, 10px); */
+        right: auto;
+        margin-left: -70px;
+        margin-top: 70px !important;
+    
+    }
+      .swiper-button-next, .swiper-rtl .swiper-button-next {
+        /* left: var(--swiper-navigation-sides-offset, 10px); */
+        right: auto;
+        margin-right: -70px;
+        margin-top: 70px !important;
+    }
+    .content p{
+        font-size: 13px;
+    }
+    .modal-content{
+        margin: 0 20px;
+    }
+    /* .btn-lg button{
+        display: none;
+    } */
+    .cards-blog{
+        grid-template-columns: 1fr;
+
+    }
+    header .navbar{
+        align-items: center;
+       
+    }
+    .menu-bar{
+        display: block;
+    }
+    .menu-bar i{
+        font-size: 30px;
+    }
+    .text-price-content-heading h3 {
+        font-size: 30px;
+        font-weight: 500;
+        padding: 20px 0px;
+    }
+    .text-price-content-heading {
+       
+        padding: 3rem 1rem;
+        
+    }
+    .heading-bg-cover-mat-yoga h3 {
+        font-size: 2rem;
+        
+    }
+    .cards-flex {
+        
+        padding: 24px 12px;
+       
+    }
+    .news-sub h2 {
+        padding: 20px 0px;
+        font-size: 31px;
+    }
+    .cards-flow-div-fl-small{
+        grid-template-columns: 1fr;
+
+    }
+    
+}
+/* footer End  */
+  </style>
+
+  
+
+  <header class="top-header-fixed">
+    <div class="wrapper">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo.jpg" alt="">
+        </div>
+        <ul class="list">
+          <li><a href="">ABOUT US</a></li>
+          <li><a href="">WEEKLY CLASSES</a></li>
+          <li><a href="">WORKSHOPS</a></li>
+          <li><a href="">TESTIMONIALS</a></li>
+          <li><a href="">GALLERY</a></li>
+          <li><a href="">TERMS & CONDITIONS</a></li>
+          <li><a href="">CONTACT US</a></li>
+        </ul>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <li><a href="">ABOUT US</a></li>
+          <li><a href="">WEEKLY CLASSES</a></li>
+          <li><a href="">WORKSHOPS</a></li>
+          <li><a href="">TESTIMONIALS</a></li>
+          <li><a href="">GALLERY</a></li>
+          <li><a href="">TERMS & CONDITIONS</a></li>
+          <li><a href="">CONTACT US</a></li>
+        </div>
+       
+        <div class="ln-btn">
+          <div class="btn-lg">
+            <button class="open" id="myBtn">Log In / Sign Up </button>
+            
+
+          </div>
+        </div>
+        <span class="menu-bar" onclick="openNav()"><i class="fa-solid fa-bars-staggered"></i></span>
+      </nav>
+
+
+    </div>
+  </header>
+  
+
+
+  <div class="home-section">
+    
+    <div id="myModal" class="modal">
+ <div class="cross">
+  <span class="close">
+    <img src="img/close.png" alt="">
+  </span>
+ </div>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h2>Login</h2>
+      
+         <div class="pooup-form-div">
+          <div class="popup-form-data">
+            <form action="#">
+              <div class="detales">
+                <input type="text" name="" id="" placeholder="Enter Email">
+              </div>
+              <div class="detales">
+                <input type="text" name="" id="" placeholder="Enter Password">
+              </div>
+              <div class="detales">
+               <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+              </div>
+              <div class="detales">
+                <button>Send</button>
+              </div>
+            </form>
+          </div>
+         </div>
+      </div>
+    
+    </div>
+    <div class="home">
+      <div class="content">
+        <div class="tittle">
+          <h1>Yoga In Bandon</h1>
+        </div>
+        <div class="pa-tittle">
+          <p>Dynamic Yoga Classes in the Heart of Co. Cork
+
+          </p>
+        </div>
+        <div class="cta-btn">
+          <button>Class Timetable & Prices</button>
+        </div>
+
+        <!-- popup form  --> 
+      
+      </div>
+
+    </div>
+    
+    </div>
+
+    <div class="text-center-div">
+      <div class="wrap-text">
+        <div class="row">
+          <div class="col-6">
+            <div class="img-target_view">
+              <div class="img-man-both">
+                <img src="./img/beach.jpg" alt="">
+                <div class="iver">
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <div class="content-flow">
+                        <i class="fa-solid fa-tag"></i>
+                      </div>
+                      <div class="content-flow">
+                        <a href="">
+                          NACHHALTIGKEITCATEGORY</a>
+                      </div>
+                    </div>
+                    <div class="ancor-text">
+                      <a href="">
+
+                        ESG und Nachhaltigkeit</a>
+                    </div>
+                    <div class="pare-text">
+                      <p>
+
+                        Wir helfen Ihnen beim Aufbau einer nachhaltigen Zukunft für Ihr Unternehmen.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="img-target_view">
+              <div class="img-man-both">
+                <div class="blog-img">
+                  <img
+                    src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+
+                </div>
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <div class="content-flow">
+                      <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <div class="content-flow">
+                      <a href="">
+                        NACHHALTIGKEITCATEGORY</a>
+                    </div>
+                  </div>
+                  <div class="ancor-text">
+                    <a href="">
+
+                      ESG und Nachhaltigkeit</a>
+                  </div>
+                  <div class="pare-text">
+                    <p>
+
+                      Wir helfen Ihnen beim Aufbau einer nachhaltigen Zukunft für Ihr Unternehmen.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-img-bg">
+      <div class="content-cover">
+        <div class="wrap-text">
+          <div class="sm-data-con-fl">
+            <h3>Offene Stellen</h3>
+            <p>
+              Bei KPMG Schweiz erwarten dich hervorragende Karriereperspektiven
+            </p>
+            <div class="sm-span">
+              <span><a href="">Alle Jobs suchen</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dienstleistungen -->
+
+
+    <div class="wrap-text">
+      <div class="tittle-fl">
+        <div class="heading-tittle">
+          <h2>Dienstleistungen</h2>
+        </div>
+      </div>
+      <div class="cards-blog">
+        <div class="crads">
+          <img src="./img/des (1).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow ON-0">
+              <a href="" class="ON-0">
+                AUDIT</a>
+            </div>
+          </div>
+          <div class="au-fl">
+            <a href="">Audit</a>
+          </div>
+
+          <div class="pare-text-flow">
+            <p>Vertrauen und Transparenz. Wir bieten unabhängige Prüfungsdienstleistungen.
+            </p>
+          </div>
+
+
+        </div>
+        <div class="crads">
+          <img src="./img/des (2).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow ON-0">
+              <a href="" class="ON-0">
+
+                TAX</a>
+            </div>
+           
+          </div>
+          <div class="au-fl">
+            <a href="">Tax & Legal</a>
+          </div>
+          <div class="pare-text-flow">
+            <p>Wettbewerbsfähig bleiben. Gemeinsam meistern wir steuerliche und rechtliche Herausforderungen.
+
+            </p>
+          </div>
+        </div>
+        <div class="crads">
+          <img src="./img/des (2).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow ON-0">
+              <a href="" class="ON-0">
+
+                TAX</a>
+            </div>
+           
+          </div>
+          <div class="au-fl">
+            <a href="">Tax & Legal</a>
+          </div>
+          <div class="pare-text-flow">
+            <p>Wettbewerbsfähig bleiben. Gemeinsam meistern wir steuerliche und rechtliche Herausforderungen.
+
+            </p>
+          </div>
+        </div>
+        <div class="crads">
+          <img src="./img/des (2).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow ON-0">
+              <a href="" class="ON-0">
+
+                TAX</a>
+            </div>
+           
+          </div>
+          <div class="au-fl">
+            <a href="">Tax & Legal</a>
+          </div>
+          <div class="pare-text-flow">
+            <p>Wettbewerbsfähig bleiben. Gemeinsam meistern wir steuerliche und rechtliche Herausforderungen.
+
+            </p>
+          </div>
+        </div>
+        <div class="crads">
+          <img src="./img/des (2).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow ON-0">
+              <a href="" class="ON-0">
+
+                TAX</a>
+            </div>
+           
+          </div>
+          <div class="au-fl">
+            <a href="">Tax & Legal</a>
+          </div>
+          <div class="pare-text-flow">
+            <p>Wettbewerbsfähig bleiben. Gemeinsam meistern wir steuerliche und rechtliche Herausforderungen.
+
+            </p>
+          </div>
+        </div>
+        <div class="crads">
+          <img src="./img/des (3).jpg" alt="">
+          <div class="overlay-content fl-loop">
+            <div class="content-flow">
+              <i class="fa-solid fa-tag"></i>
+            </div>
+            <div class="content-flow  ON-0">
+              <a href="" class="ON-0">
+                ADVISORY</a>
+            </div>
+          </div>
+          <div class="au-fl">
+            <a href="">Audit</a>
+          </div>
+          <div class="pare-text-flow">
+            <p>Sicher in die Zukunft. Wir unterstützen Sie im herausfordernden Geschäftsumfeld.
+              .
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dienstleistungen end -->
+
+
+    <!-- Re-Claim Health  -->
+    <div class="wrap-text">
+     
+        <div class="row-area">
+          
+          <div class="coluem-fl">
+            <div class="tittle">
+              <h3>Re-Claim Your Health</h3>
+             </div> 
+              <div class="pare">
+                <p>Yoga practice conditions the body and the mind to adapt to environmental influences, both external and internal. Rather than just alleviating symptoms, the exercises address the less evident, but very important, underlying cause of certain states and conditions.</p>
+              </div>
+              <div class="text-rage">
+                <div class="ragnge-div">
+                   <div class="fl-time">
+                     <p>Metabolism</p>
+                   </div>
+                   <div class="fl-time">
+                     <p>
+                      93%</p>
+                   </div>
+                </div>
+                
+                <div class="rage-bar">
+                  <div class="rage-under  fl-under"></div>
+                </div>
+              </div>
+              <div class="text-rage">
+                <div class="ragnge-div">
+                   <div class="fl-time">
+                     <p>Flexibility</p>
+                   </div>
+                   <div class="fl-time">
+                     <p>
+                      75%</p>
+                   </div>
+                </div>
+              </div>
+              <div class="rage-bar">
+                <div class="rage-under-2 fl-under-2"></div>
+              </div>
+              <div class="text-rage">
+                <div class="ragnge-div">
+                   <div class="fl-time">
+                     <p>Breathing</p>
+                   </div>
+                   <div class="fl-time">
+                     <p>
+                      80%</p>
+                   </div>
+                </div>
+              </div>
+              <div class="rage-bar">
+                <div class="rage-under-3 fl-under-3"></div>
+              </div>
+          </div>
+          <div class="colume-2">
+            <img src="./img/yoga.jpg" alt="">
+          </div>
+        </div>
+    </div>
+  <!-- Re-Claim Health end   -->
+
+
+  <!-- offers -->
+
+  <div class="container-fluid-text-center-fl">
+     <div class="text-content-flow-fl">
+       <div class="tittle-text-heading">
+        <h3>What Do We Offer</h3>
+          <div class="pa-times-fl">
+            <p>The word yoga comes from Sanscrit, the language of ancient India. It means union, integration or wholeness. It is an approach to health that promotes the harmonious collaboration of the human being’s three components: body, mind and spirit. While Yoga in Bandon honours the roots of yoga as a historic philosophical discipline, our weekly classes allow you to explore all spiritual, mental, emotional and physical impacts of yoga on body and mind, while increasing your overall fitness, flexibility and rejuvenation. </p>
+          </div>
+       </div>
+         <div class="wrap-text">
+          <div class="cards-flow-fl">
+            <div class="cards-flow-div-fl-small">
+               <div class="cards-flex">
+                 <img src="img/img-1.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+               <div class="cards-flex">
+                 <img src="img/img-2.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+               <div class="cards-flex">
+                 <img src="img/img-3.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+               <div class="cards-flex">
+                 <img src="img/img-4.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+               <div class="cards-flex">
+                 <img src="img/img-5.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+               <div class="cards-flex">
+                 <img src="img/img-6.png" alt="">
+                 <div class="text-tittle">
+                  <h3>Online Membership</h3>
+                  <div class="pare-text-flow-content">
+                    <p>Experience the warmth of our inclusive and welcoming online community, where individuals of all backgrounds and abilities come together to share in the joy of yoga and all things human.</p>
+                  </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+         </div>
+
+     </div>
+  </div>
+  <!-- offer END s -->
+
+
+<!-- meet teacher -->
+ <div class="wrap-text">
+   <div class="follow-meet-teachers-steps">
+    <div class="follow-steps-tittle">
+      <h3>
+        Meet The Teacher</h3>
+        <div class="pare-text-follow-meet">
+          <p>
+            Zita is a qualified yoga instructor, who trained under the guidance of Himalaya Yoga Valley centre in Cork. Bringing her dynamic, ashtanga yoga classes to Bandon, Zita has been blessed to have met all the wonderful yogis of West Cork who make the Yoga in Bandon a vibrant, engaging and mutually supportive community. 
+
+
+          </p>
+        </div>
+        <div class="cta-btn-meet">
+          <div class="meet-cta">
+            <button>More About Yoga In Bandon Community
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="meet-follow-teachers-yogos-img">
+      <div class="three-pic">
+         <div class="pic-gess-follow-img">
+          <img src="./img/yoga1 (1).jpg" alt="">
+         </div>
+         <div class="pic-gess-follow-img">
+          <img src="./img/yoga1 (2).jpg" alt="">
+         </div>
+         <div class="pic-gess-follow-img">
+          <img src="./img/yoga1 (3).jpg" alt="">
+         </div>
+         <div class="pic-gess-follow-img">
+          <img src="./img/yogaa (1).jpg" alt="">
+         </div>
+         <div class="pic-gess-follow-img">
+          <img src="./img/yogaa (2).jpg" alt="">
+         </div>
+         <div class="pic-gess-follow-img">
+          <img src="./img/yogaa (3).jpg" alt="">
+         </div>
+      </div>
+    </div>
+   </div>
+ </div>
+<!-- meet teacher end  -->
+
+<!-- our yogos -->
+ <div class="wrap-text">
+  <div class="wrap-tittle-heading">
+    <div class="text-flow-flex">
+      <div class="fl-loop-data-flex">
+        <h3>What Our Yogis Say...
+        </h3>
+      </div>
+      <div class="fl-loop-data-flex">
+        <img src="img/quote.png" alt="">
+        <img src="img/quote.png" alt="">
+      </div>
+    </div>
+  </div>
+   <div class="swiper mySwiper sp-fl">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="yogos-sayes">
+          <div class="target_name-change">
+            <div class="circle-img-data">
+              <div class="circle-path-clear">
+                <img src="img/img-1.png" alt="">
+              </div>
+              <div class="circle-path-clear">
+                <h4>Alice O'S.</h4>
+                <p class="aus">Australia</p>
+              </div>
+              
+            </div>
+      
+            <div class="pare-target-text">
+              <p>
+                ‘I really love coming to the Yoga in Bandon classes. I used to get a lot of pain in my neck and back from workout and my desk job but that has all changed since I began coming to yoga.’					</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="yogos-sayes">
+          <div class="target_name-change">
+            <div class="circle-img-data">
+              <div class="circle-path-clear">
+                <img src="img/img-1.png" alt="">
+              </div>
+              <div class="circle-path-clear">
+                <h4>Alice O'S.</h4>
+                <p class="aus">Australia</p>
+              </div>
+              
+            </div>
+            <div class="pare-target-text">
+              <p>
+                ‘I really love coming to the Yoga in Bandon classes. I used to get a lot of pain in my neck and back from workout and my desk job but that has all changed since I began coming to yoga.’					</p>
+            </div>
+          </div>
+      </div>
+    
+    </div>
+      <div class="swiper-slide">
+        <div class="yogos-sayes">
+          <div class="target_name-change">
+            <div class="circle-img-data">
+              <div class="circle-path-clear">
+                <img src="img/img-1.png" alt="">
+              </div>
+              <div class="circle-path-clear">
+                <h4>Alice O'S.</h4>
+                <p class="aus">Australia</p>
+              </div>
+              
+            </div>
+            <div class="pare-target-text">
+              <p>
+                ‘I really love coming to the Yoga in Bandon classes. I used to get a lot of pain in my neck and back from workout and my desk job but that has all changed since I began coming to yoga.’					</p>
+            </div>
+          </div>
+      </div>
+    
+    </div>
+      <div class="swiper-slide">
+        <div class="yogos-sayes">
+          <div class="target_name-change">
+            <div class="circle-img-data">
+              <div class="circle-path-clear">
+                <img src="img/img-1.png" alt="">
+              </div>
+              <div class="circle-path-clear">
+                <h4>Alice O'S.</h4>
+                <p class="aus">Australia</p>
+              </div>
+              
+            </div>
+            <div class="pare-target-text">
+              <p>
+                ‘I really love coming to the Yoga in Bandon classes. I used to get a lot of pain in my neck and back from workout and my desk job but that has all changed since I began coming to yoga.’					</p>
+            </div>
+          </div>
+      </div>
+    
+    </div>
+    
+   </div>
+   
+
+ </div>
+ <div class="swiper-button-next"></div>
+ <div class="swiper-button-prev"></div>
+ </div>
+<!-- our yogos end  -->
+
+
+<!-- price table  -->
+ <div class="text-flow-price-center">
+  <div class="text-price-content-heading">
+    <h3>Choose The Best Yoga Journey For You
+    </h3>
+    <p>We understand that your wellness journey is unique. That’s why we offer a variety of options to get involved with the Yoga in Bandon’s offering that fits your lifestyle and personal goals. Choose the plan that resonates with you, and embark on a transformative yoga experience designed to nourish your mind, body, and spirit and to become your best possible self.
+
+    </p>
+  </div>
+
+
+ 
+ </div>
+
+ <div class="content-fl-loop">
+  <div class="card one">
+    <div class="top">
+      <div class="title">Online Membership
+      </div>
+      
+    </div>
+    <div class="price-sec">
+      <span class="price">Free</span>
+     
+    </div>
+    <div class="details">
+      <div class="one">
+        <span> Yoga video library
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Wellness blog posts</span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Downloadable wellbeing PDFs</span>
+        <i class="fas fa-check"></i>
+      </div>
+    
+      <button class="sign">Sign Up To Membership</button>
+    </div>
+  </div>
+  <div class="card two">
+    <div class="ribbon"><span>BEST SELLER
+    </span></div>
+    <div class="top">
+      <div class="title">Weekly Classes
+      </div>
+      
+    </div>
+    <div class="price-sec">
+     
+      <span class="dollar">$</span>
+      <span class="price">10.99</span>
+      <span class="decimal">/Class</span>
+    </div>
+    <div class="details">
+      <div class="one">
+        <span> Dynamic yoga practice
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Yoga poses for all levels
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Yoga poses for all levels
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+     
+      <button class="sign">Book Your Next Class</button>
+    </div>
+  </div>
+  <div class="card three">
+    <div class="top">
+      <div class="title">Seasonal Workshops
+      </div>
+     
+    </div>
+    <div class="price-sec">
+      <span class="dollar">$</span>
+      <span class="price">29.99
+        </span>
+      <span class="decimal">/ WORKSHOP</span>
+    </div>
+  
+    <div class="details">
+      <div class="one">
+        <span> 90-minutes focus session
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Tailored set of yoga sequences
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="one">
+        <span> Printed handout for self-practice
+        </span>
+        <i class="fas fa-check"></i>
+      </div>
+     
+      <button class="sign">Join The Waiting List</button>
+    </div>
+  </div>
+</div>
+
+ 
+<!-- price table End   -->
+
+<!-- mat yoga -->
+ <div class="bg-img-cover-side">
+   <div class="contentent-bg-cover-img">
+     <div class="wrap-text">
+      <div class="heading-bg-cover-mat-yoga">
+        <h3>See You On The Mat
+        </h3>
+       <div class="pare-cover-bg-text-flow">
+        <p>As anything in life, the benefits you will get from your yoga practice will be proportionate to the effort you put into it. Through regular engagement with Yoga in Bandon teaching, both online and in person, you will get to know your body, celebrate its incredible potential and commit to a life of self-care. You will organically integrate yoga into your life, seeing its practice and mindset not as something to be gotten over and done with, but rather as a pleasurable and self-deserving part of your day-to-day ritual. </p>
+       </div>
+        <div class="btn-cover-bg">
+          <button>Book Your Next Class Here</button>
+        </div>
+      </div>
+     </div>
+   </div>
+ </div>
+<!-- mat yoga end  -->
+
+
+<!-- newsletter -->
+ <div class="bg-color-div">
+  <div class="newsletter wrap-text">
+    <div class="news-sub">
+      <h2>Subscribe to our newsletter</h2>
+    </div>
+  <div class="wrap-text-fl">
+    <div class="form-data-in">
+      <div class="detales-fileds">
+         <form action="#">
+            <div class="fildes">
+              <input type="text" name="" id="" placeholder="Enter Email">
+              <button>Subscribe</button>
+            </div>
+         </form>
+      </div>
+    </div>
+  
+  </div>
+  <hr>
+  
+  </div>
+
+ </div>
+<!-- newsletter end  -->
+
+
+
+<!-- fotter -->
+<div class="bg-color-div">
+  <div class="wrap-text">
+    <div class="footer-container">
+      <div class="wrap-footer-content">
+         <img src="./img/logo-removebg-preview.png" alt="">
+         <div class="pare-footer">
+          <p>Follow Yoga in Bandon on social media for more useful tips and tricks and to stay up to date with the community:  </p>
+         </div>
+         <div class="link-brands">
+           <div class="brands-links">
+            <i class="fa-brands fa-facebook-f"></i>
+           </div>
+           <div class="brands-links">
+            <i class="fa-brands fa-instagram"></i>
+           </div>
+         </div>
+  
+      </div>
+  
+      <div class="links-content-list">
+        <h4>Join</h4>
+        <ul class="list-items">
+          <li><a href="">line Membership</a></li>
+          <li><a href="">Weekly Classes</a></li>
+          <li><a href="">Workshops</a></li>
+        </ul>
+      </div>
+      <div class="links-content-list">
+        <h4>About us</h4>
+        <ul class="list-items">
+          <li><a href="">About us</a></li>
+          <li><a href="">Terms & Condition</a></li>
+          <li><a href="">Workshops</a></li>
+        </ul>
+      </div>
+      <div class="links-content-list">
+        <h4>Contact</h4>
+        <ul class="list-items">
+          <li><a href="">Online Contact Form
+          </a></li>
+          <li><a href=""> Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="copy-text">
+      <div class="copy-text-below">
+        <p>Copyright © 2024 Yoga In Bandon, All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fotter end  -->
+
+
+
+
+
+<script src="js/app.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- <script src="js/app.js"></script> -->
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      freeMode: true,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+       
+          768: {
+            slidesPerView: 2,
+          },
+          
+        },
+    });
+    
+    window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+
+}
+
+// popup modal
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+//popup modal end
+
+
+
+
+
+let navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", function(){
+    navbar.classList.toggle("active", window.scrollY > 0)
+})
+  
+</script>
+
+</body>
+
+</html>
